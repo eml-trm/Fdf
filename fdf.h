@@ -6,7 +6,7 @@
 /*   By: etermeau <etermeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/05 15:48:35 by etermeau          #+#    #+#             */
-/*   Updated: 2014/12/22 17:25:19 by etermeau         ###   ########.fr       */
+/*   Updated: 2014/12/26 10:48:29 by etermeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct	s_point
 	int			rgb;
 }				t_point;
 
-int		**read_fdf(char **av);
+t_point	ft_init_struct();
 void	ft_puttab(int **tab);
 t_point	new_point(int i, int j, int z, int rgb);
 void	ft_draw_tab(t_env *e);
