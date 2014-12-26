@@ -20,9 +20,11 @@ void	ft_code_erreur(int code)
 	{
 		ft_putstr_fd("ERROR: ", 2);
 		if (code == 1)
-			ft_putstr_fd("can't open file\n", 2);
+			ft_putstr_fd("Can't open file\n", 2);
 		else if (code == 2)
-			ft_putstr_fd("malloc error\n", 2);
+			ft_putstr_fd("Malloc error\n", 2);
+		else if (code == 3)
+			ft_putstr_fd("Variable error\n", 2);
 	}
 	exit (0);
 }

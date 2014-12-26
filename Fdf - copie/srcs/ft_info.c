@@ -15,7 +15,31 @@
 #include "libft.h"
 #include "fdf.h"
 
-size_t		ft_count_elem(char *str)
+static t_point	*ft_structup(char *src, int x, int y)
+{
+	t_point *new_pos;
+	int	len;
+	char	*dst;
+
+	len = 0;
+	if (!src)
+		ft_code_erreur(3);
+	while (src[len] != ' ' && src[len])
+		len++;
+	if (!(dst = (char *)malloc(sizeof(char) * len) + 1))
+		ft_code_erreur(2);
+	ft_strncpy(dst, src, len);
+	dst[len] = '\0';
+	if (!(new_pos = (t_point *)malloc(sizeof(t_point))))
+		ft_code_erreur(2);
+	new_pos->x = x;
+	new_pos->y = y;
+	new_pos->z = ft_atoi(dst);
+	//free(dst);
+	return (new_pos);
+}
+
+size_t		count_elem(char *str)
 {
 	int			i;
 	size_t		elem;
@@ -37,21 +61,30 @@ size_t		ft_count_elem(char *str)
 t_point		**ft_attribut(char *line, int y_pos)
 {
 	t_point	**pos;
-	int		i;
-	i = 0;
+	t_point	*tmp;
+	int	i;
+	int	x_pos;
 
-	if (!(pos = (t_point **)malloc(sizeof(t_point *)* ft_count_elem(line) + 1)))
+	x_pos = 0;
+	i = 0;
+	if (!(pos = (t_point **)malloc(sizeof(t_point *) * count_elem(line) + 1)))
 		ft_code_erreur(2);
 	while (line[i])
 	{
 		while (line[i] == ' ')
 			i++;
-		if (line[i])
+		tmp = ft_structup(line + i, x_pos, y_pos);
+		if (line[i] == 0 && x_pos == 0 && tmp == NULL)
+			pos[0] = 0;
+		else if (tmp != NULL)
 		{
-
+			pos[x_pos] = tmp;
+			x_pos++;
 		}
-		while (line[i] != ' ')
+		tmp = NULL;
+		while (line[i] != ' ' && line[i])
 			i++;
 	}
+	pos[x_pos] = 0;
 	return (pos);
 }

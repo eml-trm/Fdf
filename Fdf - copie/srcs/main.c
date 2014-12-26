@@ -46,6 +46,7 @@ void	ft_read_file(char *file, t_point ****tab)
 		line++;
 		free(matrix);
 	}
+	(*tab)[line] = NULL;
 }
 
 int		main(int ac, char *av[])
@@ -54,9 +55,7 @@ int		main(int ac, char *av[])
 
 	data = NULL;
 	if (ac == 2)
-	{
 		ft_read_file(av[1], &data);
-	}
 	else
 		ft_code_erreur(0);
 	return (0);
