@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: etermeau <etermeau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/12/03 13:52:30 by etermeau          #+#    #+#              #
-#    Updated: 2014/12/26 17:39:03 by etermeau         ###   ########.fr        #
+#    Created: 2014/12/27 18:18:00 by etermeau          #+#    #+#              #
+#    Updated: 2014/12/27 18:36:03 by etermeau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ FLAGS = -Wall -Wextra -Werror -g
 
 SRC = main.c \
 	  ft_erreur.c \
-	  ft_info.c
+	  ft_info.c \
+	  ft_fdf.c \
+	  ft_draw.c 
 
 OBJ = $(SRC:.c=.o)
 
@@ -32,7 +34,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -s -C $(LIB)
-	@gcc $(FLAGS) -o $(NAME) $^ -L$(LIB) -lft
+	@gcc $(FLAGS) -o $(NAME) $^ -L$(LIB) -lft -L /usr/X11/lib -lmlx -lXext -lX11
 
 %.o: $(DIRSRC)%.c
 	@gcc $(FLAGS)  -o $@ -c $< -I$(LIB)$(HEADER) -I$(HEADER)

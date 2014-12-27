@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: etermeau <etermeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/26 17:07:23 by etermeau          #+#    #+#             */
-/*   Updated: 2014/12/26 18:06:56 by etermeau         ###   ########.fr       */
+/*   Created: 2014/12/27 18:13:16 by etermeau          #+#    #+#             */
+/*   Updated: 2014/12/27 21:57:55 by etermeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 
 static t_point	*ft_structup(char *src, int x, int y)
 {
-	t_point *new_pos;
-	int	len;
-	char	*dst;
+	int			len;
+	char		*dst;
+	t_point		*new_pos;
 
 	len = 0;
 	if (!src)
 		ft_code_erreur(3);
 	while (src[len] != ' ' && src[len])
 		len++;
-	if (!(dst = (char *)malloc(sizeof(char) * len) + 1))
+	if (!(dst = (char *)malloc((len + 1) * sizeof(char))))
 		ft_code_erreur(2);
 	ft_strncpy(dst, src, len);
 	dst[len] = '\0';
@@ -35,11 +35,11 @@ static t_point	*ft_structup(char *src, int x, int y)
 	new_pos->x = x;
 	new_pos->y = y;
 	new_pos->z = ft_atoi(dst);
-	//free(dst);
+	free (dst);
 	return (new_pos);
 }
 
-size_t		count_elem(char *str)
+size_t			count_elem(char *str)
 {
 	int			i;
 	size_t		elem;
@@ -58,16 +58,16 @@ size_t		count_elem(char *str)
 	return (elem);
 }
 
-t_point		**ft_attribut(char *line, int y_pos)
+t_point			**ft_attribut(char *line, int y_pos)
 {
-	t_point	**pos;
-	t_point	*tmp;
-	int	i;
-	int	x_pos;
+	t_point		**pos;
+	t_point		*tmp;
+	int			i;
+	int			x_pos;
 
 	x_pos = 0;
 	i = 0;
-	if (!(pos = (t_point **)malloc(sizeof(t_point *) * count_elem(line) + 1)))
+	if (!(pos = (t_point **)malloc((count_elem(line) + 1) * sizeof(t_point *))))
 		ft_code_erreur(2);
 	while (line[i])
 	{
@@ -77,10 +77,7 @@ t_point		**ft_attribut(char *line, int y_pos)
 		if (line[i] == 0 && x_pos == 0 && tmp == NULL)
 			pos[0] = 0;
 		else if (tmp != NULL)
-		{
-			pos[x_pos] = tmp;
-			x_pos++;
-		}
+			pos[x_pos++] = tmp;
 		tmp = NULL;
 		while (line[i] != ' ' && line[i])
 			i++;

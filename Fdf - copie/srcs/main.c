@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: etermeau <etermeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/26 13:19:24 by etermeau          #+#    #+#             */
-/*   Updated: 2014/12/26 18:06:59 by etermeau         ###   ########.fr       */
+/*   Created: 2014/12/27 18:16:04 by etermeau          #+#    #+#             */
+/*   Updated: 2014/12/27 22:00:52 by etermeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "libft.h"
 #include "fdf.h"
 
-int		ft_check_file(char *file)
+int			ft_check_file(char *file)
 {
 	int		fd;
 
@@ -25,7 +25,7 @@ int		ft_check_file(char *file)
 	return (fd);
 }
 
-void	ft_read_file(char *file, t_point ****tab)
+void		ft_read_file(char *file, t_point ****tab)
 {
 	char	*matrix;
 	int		line;
@@ -49,13 +49,16 @@ void	ft_read_file(char *file, t_point ****tab)
 	(*tab)[line] = NULL;
 }
 
-int		main(int ac, char *av[])
+int			main(int ac, char *av[])
 {
-	t_point 	***data;
+	t_point	***data;
 
 	data = NULL;
 	if (ac == 2)
+	{
 		ft_read_file(av[1], &data);
+		ft_fdf(&data);
+	}
 	else
 		ft_code_erreur(0);
 	return (0);
