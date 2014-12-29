@@ -57,7 +57,8 @@ int			main(int ac, char *av[])
 	if (ac == 2)
 	{
 		ft_read_file(av[1], &data);
-		ft_fdf(&data);
+		ft_check_map(&data);
+		//ft_fdf(&data);
 	}
 	else
 		ft_code_erreur(0);

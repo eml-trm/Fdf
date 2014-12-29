@@ -71,7 +71,7 @@ t_point			**ft_attribut(char *line, int y_pos)
 		ft_code_erreur(2);
 	while (line[i])
 	{
-		while (line[i] == ' ')
+		while (line[i] == ' ' && line[i])
 			i++;
 		tmp = ft_structup(line + i, x_pos, y_pos);
 		if (line[i] == 0 && x_pos == 0 && tmp == NULL)

@@ -13,11 +13,11 @@
 #ifndef FDF_H
 # define FDF_H
 
-# define GPS_X 16
-# define GPS_Y 5
-# define INCX 0.9
-# define INCY 0.9
-# define SPC 10
+# define GPS_X 50
+# define GPS_Y 2
+# define INCX 1.2
+# define INCY 1.2
+# define SPC 15
 # define ENV (*tab)[0][0]
 
 typedef struct	s_point
@@ -29,6 +29,7 @@ typedef struct	s_point
 	int			z;
 }				t_point;
 
+int				ft_check_map(t_point ****tab);
 void			ft_draw_tab(t_point ****tab, int i);
 void			ft_fdf(t_point ****tab);
 t_point			**ft_attribut(char *line, int y_pos);

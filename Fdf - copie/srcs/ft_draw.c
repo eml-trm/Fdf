@@ -61,12 +61,12 @@ void		ft_draw_straight(int i, int j, t_point ****tab)
 	while (x <= x2)
 	{
 		y = (y1 + ((((*tab)[i][j + 1]->y) - y1) * (x - x1) / (x2 - x1)));
-		if ((*tab)[i][j]->z >= 10 && (*tab)[i][j + 1]->z >= 10)
-			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xFF0000);
-		else if ((*tab)[i][j]->z != (*tab)[i][j + 1]->z)
-			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xB364B9);
+		if ((*tab)[i][j]->z >= 1 && (*tab)[i][j + 1]->z >= 10)
+			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xE0FFFF);
+		else if ((*tab)[i][j]->z == 0 && (*tab)[i][j + 1]->z == 0)
+			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0x9ACD32);
 		else
-			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xA4BBD5);
+			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xEE82EE);
 		x++;
 	}
 }
@@ -87,12 +87,12 @@ void		ft_draw_straight2(int i, int j, t_point ****tab, int y2)
 	while (x <= x2)
 	{
 		y = (y1 + ((y2 - y1) * (x - x1) / (x2 - x1)));
-		if ((*tab)[i][j]->z >= 10 && (*tab)[i + 1][j]->z >= 10)
-			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xFF0000);
-		else if ((*tab)[i][j]->z != (*tab)[i + 1][j]->z)
-			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xB364B9);
+		if ((*tab)[i][j]->z >= 1 && (*tab)[i + 1][j]->z >= 10)
+			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xE0FFFF);
+		else if ((*tab)[i][j]->z == 0 && (*tab)[i + 1][j]->z == 0)
+			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0x9ACD32);
 		else
-			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xA4BBD5);
+			mlx_pixel_put(ENV->mlx, ENV->win, x, y, 0xEE82EE);
 		x++;
 	}
 }
