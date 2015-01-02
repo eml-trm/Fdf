@@ -6,10 +6,11 @@
 /*   By: etermeau <etermeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 18:13:16 by etermeau          #+#    #+#             */
-/*   Updated: 2014/12/27 21:57:55 by etermeau         ###   ########.fr       */
+/*   Updated: 2014/12/31 00:14:54 by etermeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include "libft.h"
@@ -58,14 +59,34 @@ size_t			count_elem(char *str)
 	return (elem);
 }
 
-t_point			**ft_attribut(char *line, int y_pos)
+void			ft_no_space(char *line, bool b)
+{
+	int			j;
+	int			i;
+
+	j = 0;
+	i = 0;
+	while (line[j])
+	{
+		if (line[i] != ' ' && line[i])
+			i++;
+		while (line[i] == ' ' && line[i])
+		{
+			b = 1;
+			i++;
+		}
+		j++;
+	}
+	if (b == 0)
+		ft_code_erreur(4);
+}
+
+t_point			**ft_attribut(char *line, int y_pos, int x_pos)
 {
 	t_point		**pos;
 	t_point		*tmp;
 	int			i;
-	int			x_pos;
 
-	x_pos = 0;
 	i = 0;
 	if (!(pos = (t_point **)malloc((count_elem(line) + 1) * sizeof(t_point *))))
 		ft_code_erreur(2);

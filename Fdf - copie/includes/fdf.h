@@ -29,10 +29,11 @@ typedef struct	s_point
 	int			z;
 }				t_point;
 
+void			ft_no_space(char *line, bool b);
 int				ft_check_map(t_point ****tab);
 void			ft_draw_tab(t_point ****tab, int i);
 void			ft_fdf(t_point ****tab);
-t_point			**ft_attribut(char *line, int y_pos);
+t_point			**ft_attribut(char *line, int y_pos, int x_pos);
 void			ft_code_erreur(int code);
 
 #endif

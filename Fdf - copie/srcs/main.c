@@ -6,10 +6,11 @@
 /*   By: etermeau <etermeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 18:16:04 by etermeau          #+#    #+#             */
-/*   Updated: 2014/12/27 22:00:52 by etermeau         ###   ########.fr       */
+/*   Updated: 2014/12/30 16:59:41 by etermeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include "libft.h"
@@ -42,7 +43,8 @@ void		ft_read_file(char *file, t_point ****tab)
 	line = 0;
 	while (get_next_line(fd, &matrix))
 	{
-		(*tab)[line] = ft_attribut(matrix, line);
+		(*tab)[line] = ft_attribut(matrix, line, 0);
+		ft_no_space(matrix, 0);
 		line++;
 		free(matrix);
 	}
@@ -58,7 +60,6 @@ int			main(int ac, char *av[])
 	{
 		ft_read_file(av[1], &data);
 		ft_check_map(&data);
-		//ft_fdf(&data);
 	}
 	else
 		ft_code_erreur(0);

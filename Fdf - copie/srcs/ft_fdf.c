@@ -6,10 +6,11 @@
 /*   By: etermeau <etermeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 11:07:23 by etermeau          #+#    #+#             */
-/*   Updated: 2014/12/27 22:03:20 by etermeau         ###   ########.fr       */
+/*   Updated: 2014/12/30 16:42:02 by etermeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <stdlib.h>
 #include <math.h>
 #include <mlx.h>
