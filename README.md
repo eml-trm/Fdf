@@ -5,7 +5,7 @@ This project will create a graphical schematic representation (in " Fil de fer" 
 # Summary
  1. [Makefile](#makefile)
  2. [Usage](#usage)
- 3. [Exemple](#exemple)
+ 3. [Example](#exemple)
 
 # <a name="makefile">Makefile</a>
 
@@ -22,6 +22,6 @@ This project will create a graphical schematic representation (in " Fil de fer" 
 
     ./fdf 42.fdf
 
-# <a name="exemple">Exemple</a>
+# <a name="exemple">Example</a>
 
 ![fdf](https://github.com/eml-trm/fdf/blob/master/fdf.png?raw=true)
