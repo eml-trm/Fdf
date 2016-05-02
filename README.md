@@ -21,8 +21,7 @@ paramètre.
 
 [42.fdf](https://github.com/eml-trm/fdf/blob/master/42.fdf)
 
-```shell
-./fdf 42.fdf
-```
+    ./fdf 42.fdf
+
 
 ![fdf](https://github.com/eml-trm/fdf/blob/master/fdf.png?raw=true)
