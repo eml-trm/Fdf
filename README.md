@@ -1,24 +1,22 @@
 # Fdf
-Ce projet consiste à créer graphiquement la representation schématique (en “fils de
-fer”) d’un terrain en relief en reliant différents points (x, y, z) par des segments. Les coordonnées du terrain seront stockées dans un fichier passé en
-paramètre.
+This project will create a graphical schematic representation (in " Fil de fer" ) a plot by connecting different points (x, y, z) by segments. The coordinates of the field will be stored in a file passed as parameter.
 
 
 # Summary
  1. [Makefile](#makefile)
- 2. [Utilisation](#usage)
+ 2. [Usage](#usage)
  3. [Exemple](#exemple)
 
 # <a name="makefile">Makefile</a>
 
 | Commande       	|  Actions 	|
 |----------------	|----------	|
-| `make`      	  | Compile tous les .c et créer un exécutable fdf  	|
-| `make clean`    | Supprime les .o.  	|
-| `make flcean`  	| Supprime les .o et fdf.  	|
-| `make re` 	 	| Exécute fclean et make.  	|
+| `make`      	  | Compile all .c and create an executable "fdf"  	|
+| `make clean`    | Delete all .o.  	|
+| `make flcean`  	| Delete all .o and executable 'fdf'.  	|
+| `make re` 	 	| Execute fclean and make.  	|
 
-# <a name="usage">Utilisation</a>
+# <a name="usage">Usage</a>
 
 [42.fdf](https://github.com/eml-trm/fdf/blob/master/42.fdf)
 
