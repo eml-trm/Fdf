@@ -6,7 +6,8 @@ paramètre.
 
 # Summary
  1. [Makefile](#makefile)
- 2. [Exemple](#exemple)
+ 2. [Utilisation](#usage)
+ 3. [Exemple](#exemple)
 
 # <a name="makefile">Makefile</a>
 
@@ -17,11 +18,12 @@ paramètre.
 | `make flcean`  	| Supprime les .o et fdf.  	|
 | `make re` 	 	| Exécute fclean et make.  	|
 
-# <a name="exemple">Exemple</a>
+# <a name="usage">Utilisation</a>
 
 [42.fdf](https://github.com/eml-trm/fdf/blob/master/42.fdf)
 
     ./fdf 42.fdf
 
+# <a name="exemple">Exemple</a>
 
 ![fdf](https://github.com/eml-trm/fdf/blob/master/fdf.png?raw=true)
